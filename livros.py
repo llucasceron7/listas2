@@ -11,11 +11,21 @@ for id_livro, titulo, autor, ano in livros:
 livros[0][3] = 2024
 print(livros)
 
-titulo_procurado = "Hábitos Atômicos"
+titulo_procurado = "Hábitos"
 encontrado = False
 
 for livro in livros:
     if livro[1] == titulo_procurado:
         print("Livro localizado!", livro)
         encontrado = True
+        break
+    
+if encontrado == False:
+    print("Livro não encontrado")
+
+id_remover = 2
+for indice, livro in enumerate(livros):
+    if livro[0] == id_remover:
+        removido = livros.pop(indice)
+        print("Registro removido:", removido)
         break
